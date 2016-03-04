@@ -35,12 +35,14 @@ Nenhuma flag de mtune deu algum resultado melhor que o compilado sem nada.
 ###Separando em dois fontes
 Os arquivos foram separados em **calcPrimo.c** e **primoMain.c.**
 Os arquivos foram compilados com o makefile e o script.
-Após separar o arquivo em dois e compilar **sem** flag nenhuma: 
+Após separar o arquivo em dois e compilar **sem** flag nenhuma:
+ 
 Número de Fontes | First Run (ms) | Second Run (ms) | Third Run (ms) | Average (ms)
  :------------: | :-------------: | :------------: | :----------: | :------:
     2        | 355             | 359            | 354     | 356
   
 Após compilar os dois com a flag -O1:
+
 Número de Fontes | First Run (ms) | Second Run (ms) | Third Run (ms) | Average (ms)
  :------------: | :-------------: | :------------: | :----------: | :------:
     2        | 262             | 359            | 326     | 315
@@ -63,6 +65,7 @@ Um arquivo fonte continua mais rápido como demonstrado anteriormente, agindo co
 
 ###Melhorando um pouco o programa
 Após fazer o programa somente verificar números ímpares, ao compilarmos sem nenhuma flag de otimização temos os tempos:
+
 N   | Número de Fontes | First Run (s) | Second Run (s) | Third Run (s) | Average (s)
 ------ | :------------: | :-------------: | :------------: | :----------: | :------:
 100000   |     2        | 1.291             | 1.188            | 1.197     | 1.22
@@ -75,7 +78,8 @@ Segundo o gprof, com N= 100000, a função primo é chamada 49999 vezes e é res
 ###Paralelizando
 Se eu pudesse paralelizar o código, eu paralizaria a função primo, pois cada chamada é independente da outra e não há nenhuma dependencia entre elas, logo, podem ser executadas em paralelo e enquanto um core checa se i é primo, outro pode checar se i+2 é primo sem problema algum.
 
-Após adicionar a linha **"#pragma omp parallel for"** antes do for e **"#pragma omp atomic"** onde a variável do total de primos é somada, ao compilarmos sem flag de otimização, apenas com a flag do openmp e com um arquivo fonte,:
+Após adicionar a linha **"#pragma omp parallel for"** antes do for e **"#pragma omp atomic"** onde a variável do total de primos é somada, ao compilarmos sem flag de otimização, apenas com a flag do openmp e com um arquivo fonte:
+
 N   | Número de Fontes | First Run (s) | Second Run (s) | Third Run (s) | Average (s)
 ------ | :------------: | :-------------: | :------------: | :----------: | :------:
 100000   |     1        | 0.603             | 0.598            | 0.609     | 0.603
@@ -83,6 +87,7 @@ N   | Número de Fontes | First Run (s) | Second Run (s) | Third Run (s) | Avera
 Vemos que tivemos um ganho de quase 2x o que é ótimo.
 
 Após compilarmos com "gcc -o primo primo.c -O1 -fopenmp" e rodando "time ./primo 100000", os tempos ficaram:
+
 N   | Número de Fontes | First Run (s) | Second Run (s) | Third Run (s) | Average (s)
 ------ | :------------: | :-------------: | :------------: | :----------: | :------:
 100000   |     1        | 0.506             | 0.519            | 0.531     | 0.518
