@@ -7,6 +7,7 @@ Compilando o arquivo primo.c com flags e sem flag:
 Todos os tempos nesse relatório foram obtidos pelo comando time. (Exemplo: time ./primo e pegando o valor especificado em **real**).
 Tempos
 ----------
+
 Flag   | First Run (ms) | Second Run (ms) | Third Run (ms) | Average (ms)
 ------ | :------------: | :-------------: | :------------: | :----------:
 Nada   |     302        | 377             | 315            | 331
@@ -21,6 +22,7 @@ Mtune faz com que o gcc compile o código otimizando-o à arquitetura do process
 Na máquina do IC tempos um Intel Core i5.
 
 Flags testadas, por exemplo, -mtune=core2 e compilados sem nenhuma flag de otimização -Ox junto:
+
 Flag   | First Run (ms) | Second Run (ms) | Third Run (ms) | Average (ms)
 ------ | :------------: | :-------------: | :------------: | :----------:
 core2   |     402        | 297             | 305            | 335
