@@ -71,12 +71,12 @@ Não podemos avaliar muito os desempenhos de disco pois poucas pessoas colocaram
 
 ### ffmpeg
 
-![Benchmark2](/imagens/ffmpeg-time.png "Fig 2")
+![Benchmark2](/projeto01/parte03/imagens/ffmpeg-time.png "Fig 2")
 
 Mais uma vez, os processadores mais potentes, com mais clock, se saíram melhores, o melhor sendo um Intel i7-4700HQ @ 2.4GHz o melhor. Já o Intel Core 2 Duo @ 2.1GHz foi o pior. É importante ressaltar que essa aplicação utiliza processamento paralelo, o que beneficiou os processadores com mais núcleos e threads, que são os mais modernos.
 
-![Benchmark3](/imagens/ffmpeg-pagefaults.png "Fig 3")
-![Benchmark4](/imagens/ffmpeg-cachemisses.png "Fig 4")
+![Benchmark3](/projeto01/parte03/imagens/ffmpeg-pagefaults.png "Fig 3")
+![Benchmark4](/projeto01/parte03/imagens/ffmpeg-cachemisses.png "Fig 4")
 
 Vemos que não há muita relação com o número de cache miss e pagefaults com o desempenho. Vemos que o João Fidelis, que teve o melhor desempenho de tempo, teve um dos maiores índices de cache miss e page fault, o que indica que uma boa arquitetura (como bom HD e um processador moderno) conseguem superar esses atrasos.
 
@@ -84,44 +84,44 @@ Vemos que não há muita relação com o número de cache miss e pagefaults com 
 
 ### tcc
 
-![Benchmark5](/imagens/tcc-time.png "Fig 5")
+![Benchmark5](/projeto01/parte03/imagens/tcc-time.png "Fig 5")
 
 Esse resultado foi bastante interessante, os dois melhores computadores são Intel Core i7 com clocks de 2.4GHz e 2.2GHz. Já os três piores tem processadores Intel Core 2 Quad com 2.66GHz de clock. Apesar do clock maior, processadores mais antigos se saíram muito piores.
 
 ### Convolução
 
-![Benchmark6](/imagens/convolucao-time.png "Fig 6")
+![Benchmark6](/projeto01/parte03/imagens/convolucao-time.png "Fig 6")
 
 Os tempos ficaram próximos, com exceção dos útlimos. O Victor Souza tem um processador que não é muito novo e o Renan Castro está rodando o SO numa máquina virtual, o que pode explicar esse tempo maior, apesar de ter um processador mais novo.
 
 ### Gnuplot
 
-![Benchmark7](/imagens/gnuplot-time.png "Fig 7")
+![Benchmark7](/projeto01/parte03/imagens/gnuplot-time.png "Fig 7")
 
 Mais uma vez a Raspberry Pi se saiu a pior máquina, o que é compreensível, tendo em vista suas claras limitações de processamento.
 O Pedro Grijo colocou dados errados na planilha e por isso seu tempo ficou muito menor se comparado com os outros. Outros que se saíram mal, também tem processadores piores, como o Matheus Pinheiro com um Intel Core i5 @ 1.6GHz e e o Felipe Emos que tem um Intel Atom.
 
 ### Ordenação
 
-![Benchmark8](/imagens/ordenacao-bubble.png "Fig 8")
-![Benchmark9](/imagens/ordenacao-quick.png "Fig 9")
+![Benchmark8](/projeto01/parte03/imagens/ordenacao-bubble.png "Fig 8")
+![Benchmark9](/projeto01/parte03/imagens/ordenacao-quick.png "Fig 9")
 
 Vemos mais uma vez os processadores mais potentes e novos com mais velocidade. É interessante notar como o algoritmo faz muita diferença, já que o BubbleSort, conhecido pela simplicidade, tem uma grande diferença entre as médias do pior caso com as médias do melhor caso, enquanto o QuickSort teve médias semelhantes.
 
 ### Imagemagick
 
-![Benchmark10](/imagens/imagemagick-time.png "Fig 10")
-![Benchmark11](/imagens/imagemagick-inst.png "Fig 11")
+![Benchmark10](/projeto01/parte03/imagens/imagemagick-time.png "Fig 10")
+![Benchmark11](/projeto01/parte03/imagens/imagemagick-inst.png "Fig 11")
 
 É notável como os tempos variaram de iteração para iteração. Também podemos ver que quanto maior o IPC menor o tempo de execução, o que faz muito sentido, já que executando mais instruções por ciclo, mais comandos conseguem ser processador mais rápido.
 
 ### FFTW
 
-![Benchmark12](/imagens/fftw-time.png "Fig 12")
+![Benchmark12](/projeto01/parte03/imagens/fftw-time.png "Fig 12")
 
 Achei estranho o fato de em quase todos a execução com parâmetro de 3.000.000 ter sido maior que a de 70.000.000 com exceção do Mateus Ruivo que deu muito maior o de 70.000.000. O alto desvio padrão da amostra do Mateus indica, talvez, que em alguma execução ocorreu algo de diferente que aumentou o tempo de execução daquela amostra específica, como a média está sendo feita com apenas 5 execuções, uma fora do padrão pode fazer muita diferença.
 
 ### Conclusão
 
-Concluímos que os processadores mais novos tem um desempenho melhor em várias aplicações, sendo afetados principalmente, pelo frequência do clock e outros detalhes que não tivemos muito acesso como tamanho da cache, etc. Notamos que a maior diferença apareceu na aplicação FFMPEG que se utilizou de processamento paralelo, uma tendência no mercado, e que é bastante afetada por processadores com mais núcleos e threads (geralmente, mais novos).
+Concluímos que os processadores mais novos tem um desempenho melhor em várias aplicações, sendo afetados principalmente, pelo frequência do clock e outros detalhes que não tivemos muito acesso como tamanho da cache, etc. Notamos que a maior diferença apareceu na aplicação FFMPEG que se utilizou de processamento paralelo, uma tendência no mercado, e que é bastante afetada por processadores com mais núcleos e threads (geralmente, mais novos). Vale notar que a Raspberry Pi ficou com os piores tempos e isso vai de acordo com o fato de ter um processador bem menos potente que os notebooks usados pela maioria dos alunos.
 É importante ressaltar que nesses testes havia muitas variáveis como integração de diferentes componentes do computador (diferentes fabricantes de memória RAM ou HD, por exemplo), diferentes SO, não sabemos se a pessoa rodou a aplicação com o computador executando outras tarefas. Assim, os resultados não são tão precisos, mas dão indícios claros que processadores mais modernos tem desempenhos melhores.
