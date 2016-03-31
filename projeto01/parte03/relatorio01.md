@@ -63,7 +63,7 @@ Grupo   | Benchmark | Medições
 
 ### Genetic
 
-![Benchmark1](/imagens/genetic-both.png "Fig 1")
+![Benchmark1](/projeto01/parte03/imagens/genetic-both.png "Fig 1")
 
 Como podemos ver, tirando a Raspberry Pi do Pedro, todas as outras máquinas tiveram desempenho de tempo de execução muito semelhantes. O tempo de escrita em disco variou um pouco mais que entre os computadores, com as medições ficando entre 50 MB/s e 100MB/s, excluindo a placa Raspberry Pi.
 Como podemos ver, a melhor performance ficou com o Pedro Meireles, o que pode ser explicado pelo seu processador Intel i5 com clock em 3.3GHz, que superou outros Intel i7 (de uma nova geração) mas que tem clocks menores (por volta de 2.4GHz). a placa Raspberry Pi era de se esperar ao ficar em último, pois seu processador é muito mais simples, com clock de 900MHz. O computador do Luiz Sekijima, o segundo pior, também apresenta um clock abaixo da média, em torno de 2.1GHz, o que mostra uma correlação com a frequência do clock do processador com o tempo de execução, o que faz sentido.
