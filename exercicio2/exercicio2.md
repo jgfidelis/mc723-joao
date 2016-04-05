@@ -66,8 +66,6 @@ Fixamos então o valor da associatividade para 8 em ambas.
 
 Pelo gráfico, o melhor foi o subblock.
 
-Grafico 9 replacement policy
-
 ![Grafico10](/exercicio2/imagens/miss-x-repl-l2.png "Fig 10")
 
 Vemos novamente que o melhor foi o LRU.
