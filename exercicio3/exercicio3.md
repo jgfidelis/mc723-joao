@@ -55,17 +55,17 @@ O total de ciclos calculado então foi de 12,556 ciclos.
 
 ### Benchmarks
 
-Como meu RA é 136242, tive que analisar os benchmarks susan, adpcm encoder e dijkstra.
+Como meu RA é 136242, tive que analisar os benchmarks susan corners, adpcm encoder e dijkstra.
 
-#### Susan
+#### Susan Corners
 
 Simulei o Susan com o comando:
-mips.x --load=susan input_large.pgm output_large.smoothing.pgm -s
+mips.x --load=susan input_large.pgm output_large.corners.pgm -c
 
-A simulação teve um total de 395,746,851 de instruções.
+A simulação teve um total de 43,413,686 de instruções.
 
-Sendo 77,366,310 de memória, 28,198,789 de branches e as outras são no total 290,181,752 instruções.
-Fazendo as contas temos 804,268,572 ciclos.
+Sendo 13,917,678 de memória, 5,224,216 de branches e as outras são no total 24,271,792 instruções.
+Fazendo as contas temos 118,266,986 ciclos.
 
 #### ADPCM Encoder
 
