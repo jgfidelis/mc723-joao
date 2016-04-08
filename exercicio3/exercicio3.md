@@ -2,7 +2,7 @@
 ## João Guilherme Daros Fidelis
 ## RA 136242
 
-### Hellow World
+### Hello World
 
 Fiz um programa simples, que apenas imprimia "Hello World" na tela pelo comando printf.
 
