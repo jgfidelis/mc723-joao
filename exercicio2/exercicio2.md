@@ -46,21 +46,23 @@ Então, chegamos o melhor desempenho da cache L1 foi obtido com tamanho total 64
 
 ![Grafico6](/exercicio2/imagens/miss-x-totalcache-l2.png "Fig 6")
 
-Mais uma vez, assim como na L1, quanto maior o tamanho da cache, menor o miss rate. Porém, limitei o valor para 2MB total (1MBpara cada), pois ja seria um valor muito grande para o mercado.
+Desta vez, fizemos a L2 unificada, ao contrário da L1 dividida em instruções e dados.
 
-Como 2MB seria muito grande, fixei o valor em 1MB no total (512KB para cada).
+Mais uma vez, assim como na L1, quanto maior o tamanho da cache, menor o miss rate. Porém, limitei o valor para 2MB total, pois ja seria um valor muito grande para o mercado e vemos que de 1MB para 2MB o ganho foi bem menor, já que a curva está com uma angulação menor.
+
+Fizemos os testes remanescentes com 2MB.
 
 ![Grafico7](/exercicio2/imagens/miss-x-block-l2.png "Fig 7")
 
 Nesse gráfico, vemos que o tamanho de bloco não importou para valores baixos na cache de instruções. Vemos que no valor de 2MB houve piora no desempenho em relação a 1MB para cada.
 
-Com base nisso, fixei o valor ddo tamanho de bloco para dados e instruções em 1MB.
+Com base nisso, fixei o valor do tamanho de bloco para dados e instruções em 1MB.
 
 ![Grafico8](/exercicio2/imagens/miss-x-assoc-l2.png "Fig 8")
 
-Vemos mais uma vez que houve perda de desempenho do 12 para 8 na cache de dados.
+Vemos que para a cache L2, ainda houve melhora numa associação de 12, mesmo que pequena, e uma associação de 16 ja manteve o mesmo desempenho, não sendo proveitoso aumentar ainda mais o nível da associação.
 
-Fixamos então o valor da associatividade para 8 em ambas.
+Fixamos o valor da associatividade em 12.
 
 ![Grafico9](/exercicio2/imagens/miss-x-fetch-l2.png "Fig 9")
 
@@ -70,4 +72,4 @@ Pelo gráfico, o melhor foi o subblock.
 
 Vemos novamente que o melhor foi o LRU.
 
-A melhor configuração para a cache L2 ficou em tamanho total 1MB, com 512KB para dados e instrução, tamanho de bloco em 1MB para ambas, associatividade em 8 para ambas, fetch policy em subblock para ambas e replacement policy em LRU para ambas.
+A melhor configuração para a cache L2 ficou em tamanho total 1MB, tamanho de bloco em 1MB, associatividade em 12 para ambas, fetch policy em subblock e replacement policy em LRU.
