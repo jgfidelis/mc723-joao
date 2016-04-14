@@ -65,17 +65,17 @@ mips.x --load=susan input_large.pgm output_large.corners.pgm -c
 A simulação teve um total de 43,413,686 de instruções.
 
 Sendo 13,917,678 de memória, 5,224,216 de branches e as outras são no total 24,271,792 instruções.
-Fazendo as contas temos 118,266,986 ciclos.
+Fazendo as contas temos 179,121,220 ciclos.
 
 #### ADPCM Encoder
 
 Simulei o adpcm encoder com o comando:
 mips.x --load=rawcaudio < ../data/small.pcm > ../output_small.adpcm
 
-Obtivemos um total de 35,739,019 instruções.
+Obtivemos um total de 179,121,220 instruções.
 
 Sendo 2,403,149 de memória, 9,117,921 branches e 24,217,949 compões o resto.
-Fazendo as contas, o total de ciclos ficou em 122,606,606.
+Fazendo as contas, o total de ciclos ficou em 75,603,202.
 
 #### Dijkstra
 
@@ -85,4 +85,4 @@ mips.x --load=dijkstra_small input.dat > output_small.dat
 Obtivemos um total de 49,165,606 instruções.
 
 Sendo 13,994,129 de memória, 10,835,651 branches e 24,335,826 compões o resto.
-Fazendo as contas, o total de ciclos ficou em 174,674,723.
+Fazendo as contas, o total de ciclos ficou em 196,784,069.
